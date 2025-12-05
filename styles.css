@@ -62,7 +62,7 @@ main.viewer-wrapper {
 model-viewer {
   width: 100%;
   height: 100%;
-  background-color: #ffffff; /* خلفية بيضاء لنتيجة أفضل */
+  background-color: #ffffff; /* خلفية بيضاء */
 }
 
 /* شريط الأيقونات الجانبي */
@@ -181,7 +181,7 @@ model-viewer > #ar-prompt {
   position: absolute;
   left: 50%;
   bottom: 60px;
-  animation: elongate 2s infinite alternate;
+  animation: elongate 2s infinite ease-in-out alternate;
   display: none;
 }
 
@@ -268,7 +268,7 @@ model-viewer > #ar-prompt img {
   color: #b0b0b0;
 }
 
-/* زر موافق في شاشة التعليمات */
+/* زر موافق (تعليمات + معلومات) */
 .ok-button {
   width: 100%;
   padding: 12px;
@@ -279,9 +279,10 @@ model-viewer > #ar-prompt img {
   color: white;
   font-size: 1rem;
   font-weight: 600;
+  cursor: pointer;
 }
 
-/* --- نافذة المعلومات بعد الإصلاح الكامل --- */
+/* --- نافذة المعلومات مع الإصلاح --- */
 .info-panel {
   position: absolute;
   top: 0;
@@ -306,7 +307,7 @@ model-viewer > #ar-prompt img {
   visibility: visible;
 }
 
-/* صندوق المحتوى مع Scroll */
+/* صندوق المحتوى مع Scroll داخلي */
 .info-panel-content {
   background-color: rgb(0 0 0 / 75%);
   color: white;
@@ -317,11 +318,11 @@ model-viewer > #ar-prompt img {
   text-align: center;
   border: 1px solid rgba(255,255,255,0.1);
 
-  max-height: calc(100vh - 80px);
-  overflow-y: auto;
+  max-height: calc(100vh - 80px); /* هنا السحر */
+  overflow-y: auto;               /* سكرول داخلي عند النص الطويل */
 }
 
-/* عنوان مثبت أثناء التمرير */
+/* العنوان ثابت أثناء التمرير */
 .info-panel-content h3 {
   margin: 0 0 12px 0;
   padding: 10px 0;
@@ -338,11 +339,38 @@ model-viewer > #ar-prompt img {
   margin-bottom: 20px;
 }
 
-/* زر موافق داخل نافذة المعلومات */
+/* زر موافق داخل نافذة المعلومات (نفس .ok-button) */
 .info-panel-content .ok-button {
-  background-color: #00A695;
-  padding: 12px;
-  border-radius: 18px;
-  cursor: pointer;
   margin-top: 16px;
+}
+
+/* تحسينات بسيطة للشاشات الصغيرة */
+@media (max-width: 480px) {
+  .card-header {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+  }
+
+  .side-icon-bar {
+    right: 10px;
+  }
+
+  #ar-button {
+    bottom: 16px;
+    height: 46px;
+    font-size: 1rem;
+  }
+
+  .phone {
+    border-radius: 24px;
+    padding: 18px 16px;
+  }
+
+  .step-text-title {
+    font-size: 0.85rem;
+  }
+
+  .step-text-sub {
+    font-size: 0.75rem;
+  }
 }
