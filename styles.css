@@ -59,7 +59,7 @@ main.viewer-wrapper {
 model-viewer {
   width: 100%;
   height: 100%;
-  background-color: transparent;
+  background-color: #ffffff; /* خلفية بيضاء مثل المشروع الأول */
 }
 
 .side-icon-bar {
@@ -111,7 +111,8 @@ model-viewer {
   top: 50%;
   transform: translate3d(-50%, -50%, 0);
   border-radius: 25px;
-  box-shadow: 0px 3px 10px 3px rgba(0, 0, 0, 0.5), 0px 0px 5px 1px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 3px 10px 3px rgba(0, 0, 0, 0.5),
+              0px 0px 5px 1px rgba(0, 0, 0, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.9);
   background-color: rgba(0, 0, 0, 0.5);
 }
@@ -136,7 +137,7 @@ model-viewer {
   bottom: 20px;
   left: 20px;
   right: 20px;
-  
+
   background-color: #00A695;
   color: white;
   border: none;
@@ -188,7 +189,7 @@ model-viewer > #ar-prompt {
   display: none;
 }
 
-/* هنا السحر: اليد تظهر فقط عندما تكون جلسة AR بدأت */
+/* اليد تظهر فقط عندما تكون جلسة AR بدأت */
 model-viewer[ar-status="session-started"] > #ar-prompt {
   display: block;
 }
@@ -231,7 +232,7 @@ model-viewer > #ar-prompt > img {
   z-index: 1;
 }
 
-.phone .header { /* تم تحديد phone. لزيادة التخصيص */
+.phone .header {
   text-align: center;
   margin-bottom: 16px;
   font-weight: 700;
@@ -342,6 +343,7 @@ model-viewer > #ar-prompt > img {
   margin-bottom: 12px;
   color: #ffffff;
 }
+
 .info-panel-content p {
   margin-bottom: 20px;
   line-height: 1.6;
